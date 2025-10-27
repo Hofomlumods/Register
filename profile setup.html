@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Setup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #ccc; /* Changed from #2ecc71 to #ccc */
+}
+
+    }
+    .logo img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #2ecc71;
+    }
+    .form {
+      margin-bottom: 20px;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    select {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    button[type="button"] {
+      width: 100%;
+      height: 40px;
+      background-color: #2ecc71;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    button[type="button"]:hover {
+      background-color: #29b866;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="icon.jpg" alt="Apri store icon">
+    </div>
+    <h1 style="text-align: center;">Welcome to Apri store</h1>
+    <p style="text-align: center; color:                                                        
+    <div class="form">
+      <input type="file" id="profilePicture" name="profilePicture">
+      <input type="text" id="username" name="username" placeholder="Username">
+      <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+      <input type="email" id="email" name="email" placeholder="Email Address">
+      <select id="age" name="age">
+        <option value="">Select Age</option>
+        <script>
+          for (var i = 1; i <= 100; i++) {
+            document.write("<option value='" + i + "'>" + i + "</option>");
+          }
+        </script>
+      </select>
+      <select id="gender" name="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" id="location" name="location" placeholder="Location">
+      <span id="error" class="error"></span>
+      <button type="button" onclick="validateForm()">Continue</button>
+    </div>
+  </div>
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var fullName = document.getElementById("fullName").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+      var gender = document.getElementById("gender").value;
+      var location = document.getElementById("location").value;
+      var error = document.getElementById("error");
+
+      if (username == "" || fullName == "" || email == "" || age == "" || gender == "" || location == "") {
+        error.innerHTML = "Please fill in all the fields.";
+      } else if (!validateEmail(email)) {
+        error.innerHTML = "Please enter a valid email address.";
+      } else {
+                                                 
+        window.location.href = "nextpage.html";
+      }
+    }
+
+    function validateEmail(email) {
+      var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>
